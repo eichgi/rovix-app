@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
      * Titulo inicial del drawer
      */
     private String drawerTitle;
+    private Fragment mPerfilFragment, mRecursosFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,17 +100,34 @@ public class MainActivity extends AppCompatActivity {
         Bundle args = new Bundle();
         args.putString(PlaceholderFragment.ARG_SECTION_TITLE, title);
 
-        Fragment fragment = PlaceholderFragment.newInstance(title);
-        fragment.setArguments(args);
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager
-                .beginTransaction()
-                .replace(R.id.main_content, fragment)
-                .commit();
+        if (title.equals("Perfil")) {
+            mPerfilFragment = new ProfileFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager
+                    .beginTransaction()
+                    .replace(R.id.main_content, mPerfilFragment)
+                    .commit();
+        } else if (title.equals("Recursos")) {
+            mRecursosFragment = new RecursosFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager
+                    .beginTransaction()
+                    .replace(R.id.main_content, mRecursosFragment)
+                    .commit();
+        } else {
+            Fragment fragment = PlaceholderFragment.newInstance(title);
+            fragment.setArguments(args);
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager
+                    .beginTransaction()
+                    .replace(R.id.main_content, fragment)
+                    .commit();
+        }
 
         drawerLayout.closeDrawers(); // Cerrar drawer
 
         setTitle(title); // Setear título actual
-
     }
+
+
 }

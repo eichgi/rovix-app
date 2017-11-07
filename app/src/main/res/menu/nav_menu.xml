@@ -15,10 +15,6 @@
             android:id="@+id/nav_carrito"
             android:icon="@drawable/ic_user"
             android:title="@string/perfil" />
-        <item
-            android:id="@+id/nav_ordenes"
-            android:icon="@drawable/ic_information"
-            android:title="@string/about" />
         <!--<item
             android:id="@+id/nav_facturas"
             android:icon="@drawable/ic_file_document"
@@ -29,6 +25,14 @@
             android:id="@+id/configuration_section"
             android:title="@string/configuracion_item">
             <menu>
+                <item
+                    android:id="@+id/nav_configuration"
+                    android:icon="@drawable/ic_settings"
+                    android:title="@string/about" />
+                <item
+                    android:id="@+id/nav_about"
+                    android:icon="@drawable/ic_information"
+                    android:title="Preferencias" />
                 <item
                     android:id="@+id/nav_log_out"
                     android:icon="@android:drawable/ic_lock_power_off"
