@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
      * Titulo inicial del drawer
      */
     private String drawerTitle;
-    private Fragment mPerfilFragment, mRecursosFragment;
+    private Fragment mPerfilFragment, mRecursosFragment, fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             setupDrawerContent(navigationView);
         }
 
-        drawerTitle = getResources().getString(R.string.home_item);
+        drawerTitle = getResources().getString(R.string.recursos);
         if (savedInstanceState == null) {
             selectItem(drawerTitle);
         }
@@ -100,28 +100,31 @@ public class MainActivity extends AppCompatActivity {
         Bundle args = new Bundle();
         args.putString(PlaceholderFragment.ARG_SECTION_TITLE, title);
 
-        if (title.equals("Perfil")) {
-            mPerfilFragment = new ProfileFragment();
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.main_content, mPerfilFragment)
-                    .commit();
-        } else if (title.equals("Recursos")) {
-            mRecursosFragment = new RecursosFragment();
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.main_content, mRecursosFragment)
-                    .commit();
-        } else {
-            Fragment fragment = PlaceholderFragment.newInstance(title);
-            fragment.setArguments(args);
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.main_content, fragment)
-                    .commit();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        switch (title) {
+            case "Perfil":
+                mPerfilFragment = new ProfileFragment();
+                fragmentManager
+                        .beginTransaction()
+                        .replace(R.id.main_content, mPerfilFragment)
+                        .commit();
+                break;
+            case "Recursos":
+                mRecursosFragment = new RecursosFragment();
+                fragmentManager
+                        .beginTransaction()
+                        .replace(R.id.main_content, mRecursosFragment)
+                        .commit();
+                break;
+            default:
+                fragment = PlaceholderFragment.newInstance(title);
+                fragment.setArguments(args);
+                fragmentManager
+                        .beginTransaction()
+                        .replace(R.id.main_content, fragment)
+                        .commit();
+                break;
         }
 
         drawerLayout.closeDrawers(); // Cerrar drawer

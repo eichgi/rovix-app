@@ -130,7 +130,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
-                android:text="» Has realizado 10 aportaciones al portal"
+                android:text="» Has realizado 10 aportaciones"
                 android:textColor="@color/cardview_light_background"
                 android:textStyle="bold" />
 
