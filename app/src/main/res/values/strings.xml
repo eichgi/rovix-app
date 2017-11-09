@@ -17,4 +17,14 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="android_layout_arrays">
+        <item>Tipo</item>
+        <item>Libro</item>
+        <item>Canal</item>
+        <item>Blog</item>
+        <item>Plataforma</item>
+        <item>Repo</item>
+        <item>Podcast</item>
+    </string-array>
 </resources>

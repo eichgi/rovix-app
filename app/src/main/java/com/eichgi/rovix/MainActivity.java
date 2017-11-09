@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
      * Titulo inicial del drawer
      */
     private String drawerTitle;
-    private Fragment mPerfilFragment, mRecursosFragment, fragment;
+    private Fragment mPerfilFragment, mRecursosFragment, mAgregarFragment, fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +115,13 @@ public class MainActivity extends AppCompatActivity {
                 fragmentManager
                         .beginTransaction()
                         .replace(R.id.main_content, mRecursosFragment)
+                        .commit();
+                break;
+            case "Nuevo":
+                mAgregarFragment = new AgregarFragment();
+                fragmentManager
+                        .beginTransaction()
+                        .replace(R.id.main_content, mAgregarFragment)
                         .commit();
                 break;
             default:
