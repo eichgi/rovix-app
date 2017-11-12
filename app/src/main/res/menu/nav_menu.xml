@@ -26,17 +26,13 @@
             android:title="@string/configuracion_item">
             <menu>
                 <item
-                    android:id="@+id/nav_configuration"
-                    android:icon="@drawable/ic_settings"
-                    android:title="@string/about" />
-                <item
                     android:id="@+id/nav_about"
-                    android:icon="@drawable/ic_information"
+                    android:icon="@drawable/ic_settings"
                     android:title="Preferencias" />
                 <item
                     android:id="@+id/nav_log_out"
                     android:icon="@android:drawable/ic_lock_power_off"
-                    android:title="@string/log_out_item" />
+                    android:title="@string/log_in_item" />
             </menu>
         </item>
     </group>

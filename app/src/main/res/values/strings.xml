@@ -9,6 +9,7 @@
     <string name="ordenes_item">Ordenes</string>
     <string name="facturas_item">Facturas</string>
     <string name="log_out_item">Cerrar Sesión</string>
+    <string name="log_in_item">Iniciar Sesión</string>
     <string name="recursos">Recursos</string>
     <string name="nuevo">Nuevo</string>
     <string name="perfil">Perfil</string>
@@ -19,7 +20,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="android_layout_arrays">
-        <item>Tipo</item>
         <item>Libro</item>
         <item>Canal</item>
         <item>Blog</item>
